@@ -1,7 +1,7 @@
 // Path: 2022/1/solution.ts
 
 export function part1(input: string): number {
-    const inputArray = input.split("\n");
+    const inputArray = input.split("\r\n");
     const elves = [];
     let total = 0;
 
@@ -18,7 +18,7 @@ export function part1(input: string): number {
 }
 
 export function part2(input: string): number {
-    const inputArray = input.split("\n");
+    const inputArray = input.split("\r\n");
     const elves = [];
     let total = 0;
 

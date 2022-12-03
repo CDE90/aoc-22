@@ -3,7 +3,7 @@
 use std::{fs::File, io::Read};
 
 fn part1(input: &str) -> u64 {
-    let v: Vec<&str> = input.split("\n").collect();
+    let v: Vec<&str> = input.split("\r\n").collect();
     let mut elves: Vec<u32> = vec![];
 
     let mut sum = 0;
@@ -21,7 +21,7 @@ fn part1(input: &str) -> u64 {
 }
 
 fn part2(input: &str) -> u64 {
-    let v: Vec<&str> = input.split("\n").collect();
+    let v: Vec<&str> = input.split("\r\n").collect();
     let mut elves: Vec<u32> = vec![];
 
     let mut sum = 0;
