@@ -9,3 +9,7 @@ edition = "2021"
 [[bin]]
 name = "aoc-1"
 path = "1/solution.rs"
+
+[[bin]]
+name = "aoc-2"
+path = "2/solution.rs"
