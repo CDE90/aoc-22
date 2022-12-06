@@ -21,3 +21,7 @@ path = "3/solution.rs"
 [[bin]]
 name = "aoc-6"
 path = "6/solution.rs"
+
+[[bin]]
+name = "aoc-4"
+path = "4/solution.rs"

@@ -2,7 +2,7 @@
 
 
 def part1(input: str) -> int:
-    input_list = input.split("\r\n")
+    input_list = input.split("\n")
     sum = 0
 
     for i in input_list:
