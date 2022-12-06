@@ -1,11 +1,12 @@
 // Path: 3/solution.rs
 
+use aoc::split_input;
 use std::{fs::File, io::Read};
 
 const CHARS: &str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 fn part1(input: &str) -> usize {
-    let input: Vec<&str> = input.split("\n").collect();
+    let input = split_input(input);
 
     let mut sum = 0;
 
@@ -24,7 +25,7 @@ fn part1(input: &str) -> usize {
 }
 
 fn part2(input: &str) -> usize {
-    let input: Vec<&str> = input.split("\n").collect();
+    let input = split_input(input);
 
     let mut sum = 0;
 

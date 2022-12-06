@@ -1,9 +1,10 @@
 // Path: 4/solution.rs
 
+use aoc::split_input;
 use std::{fs::File, io::Read};
 
 fn part1(input: &str) -> u64 {
-    let input: Vec<&str> = input.split("\r\n").collect();
+    let input = split_input(input);
 
     let mut sum = 0;
 
@@ -23,7 +24,7 @@ fn part1(input: &str) -> u64 {
 }
 
 fn part2(input: &str) -> u64 {
-    let input: Vec<&str> = input.split("\r\n").collect();
+    let input = split_input(input);
 
     let mut sum = 0;
 
