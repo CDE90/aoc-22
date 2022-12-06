@@ -2,29 +2,24 @@
 
 use std::{fs::File, io::Read};
 
-fn part1(input: &str) -> usize {
+fn solve_for_number(input: &str, number: usize) -> usize {
     input
         .as_bytes()
-        .windows(4)
+        .windows(number)
         .position(|w| {
             w.iter()
                 .all(|&x| w.iter().filter(|&y| x == *y).count() == 1)
         })
         .unwrap()
-        + 4
+        + number
+}
+
+fn part1(input: &str) -> usize {
+    solve_for_number(input, 4)
 }
 
 fn part2(input: &str) -> usize {
-    input
-        .as_bytes()
-        .windows(14)
-        .position(|w| {
-            // all unique
-            w.iter()
-                .all(|&x| w.iter().filter(|&y| x == *y).count() == 1)
-        })
-        .unwrap()
-        + 14
+    solve_for_number(input, 14)
 }
 
 fn read_input() -> String {
