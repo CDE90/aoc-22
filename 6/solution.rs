@@ -3,37 +3,28 @@
 use std::{fs::File, io::Read};
 
 fn part1(input: &str) -> usize {
-    let mut index = 0;
-
-    for i in 3..input.len() {
-        let mut items: Vec<&str> = input[i - 3..=i].split("").filter(|&x| x != "").collect();
-        items.sort();
-        items.dedup();
-
-        if items.len() == 4 {
-            index = i + 1;
-            break;
-        }
-    }
-
-    index
+    input
+        .as_bytes()
+        .windows(4)
+        .position(|w| {
+            w.iter()
+                .all(|&x| w.iter().filter(|&y| x == *y).count() == 1)
+        })
+        .unwrap()
+        + 4
 }
 
 fn part2(input: &str) -> usize {
-    let mut index = 0;
-
-    for i in 13..input.len() {
-        let mut items: Vec<&str> = input[i - 13..=i].split("").filter(|&x| x != "").collect();
-        items.sort();
-        items.dedup();
-
-        if items.len() == 14 {
-            index = i + 1;
-            break;
-        }
-    }
-
-    index
+    input
+        .as_bytes()
+        .windows(14)
+        .position(|w| {
+            // all unique
+            w.iter()
+                .all(|&x| w.iter().filter(|&y| x == *y).count() == 1)
+        })
+        .unwrap()
+        + 14
 }
 
 fn read_input() -> String {
