@@ -93,13 +93,18 @@ def part2(input: str) -> int:
             else:
                 q[-1] = (qlo, max(qhi, high))
 
-        x = 0
-        for lo, hi in q:
-            if x < lo:
-                return x * 4000000 + y
-            x = max(x, hi + 1)
-            if x > M:
-                break
+        # x = 0
+        # for lo, hi in q:
+        #     if x < lo:
+        #         return x * 4_000_000 + y
+        #     x = max(x, hi + 1)
+        #     if x > M:
+        #         break
+
+        # very slightly faster
+        if len(q) == 2:
+            x = q[0][1] + 1
+            return x * 4_000_000 + y
 
     return -1
 
